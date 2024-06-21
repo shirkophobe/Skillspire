@@ -1,0 +1,15 @@
+#blueBox {
+  width: 600px;
+  height: 600px;
+  background-color: blue;
+  position: relative;
+}
+
+#redBox {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  right: 250px;
+  bottom: 250px;
+}
