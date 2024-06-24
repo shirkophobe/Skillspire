@@ -1,0 +1,101 @@
+*{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: #f0f2f5;
+}
+
+/* div{
+    outline: dotted red 2px;
+} */
+
+#parent-container{
+    width:1200px;
+    margin: auto;
+    margin-top: 18%;
+    padding-left: 50px;
+}
+
+.child-container{
+    width:520px;
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+img{
+    width: 320px;
+    
+}
+
+h2{
+    font-size-adjust: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-left: 28px;
+}
+
+#login-form{
+    width: 400px;
+    height: 380px;
+    background-color: white;
+    margin-left: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 50px 3px #dddfe2;
+}
+
+input{
+    width: 380px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-left: 10px;
+    border: 1px solid #dddfe2;
+    margin-bottom: 15px;
+}
+
+#login-button{
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 10px;
+    background-color: #3166ff;
+    color: white;
+    border: none;
+}
+
+a{
+    color: #3166ff;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+hr{
+    border: 1px solid #dddfe2;
+}
+
+#create-account-button{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 100px;
+    background-color: #42b72a;
+    color: white;
+    border: none;
+}
+    
