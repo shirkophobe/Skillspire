@@ -1,0 +1,127 @@
+/* div {
+    outline: dotted red 2px;
+} */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 70px;
+    font-family: "Noto Sans Display";
+    color: #8b8081;
+    margin: 0;
+}
+
+a {
+    color: #57999f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+}
+.nav {
+    text-align: center;
+    width:max-content;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 300px
+}
+
+.statement{
+    text-align: center;
+    font-size: larger;
+    border:1px white;
+    background-image: linear-gradient(to right,#57999f, #b1b1b1);
+    margin-top:50px;
+    height: 100px
+}
+
+h3{
+    text-align: center;
+}
+.container{
+display: flex;
+margin:auto;
+margin-left:350px;
+}
+ 
+.con1{
+    background-color: #e1e4fc;
+    border:solid black;
+    border-radius: 10px;
+    width:300px;
+    display: inline-block;
+    height:400px;
+    margin-right: 25px;
+    margin-left:150px;
+    margin-top:30px;
+    line-height: 60px;
+}
+.con2{
+    background-color: #f0d9e7;
+    border:solid black;
+    border-radius: 10px;
+    width:300px;
+    display: inline-block;
+    height:400px;
+    margin-right: 25px;
+    margin-top:30px;
+    padding-left:5px;
+}
+.con3{
+    background-color:  #d1c1d8;
+    border:solid black;
+    border-radius: 10px;
+    width:300px;
+    display: inline-block;
+    height:400px;
+    margin-right: 25px;
+    padding-right:10px;
+    margin-top:30px;
+    line-height: 50px;
+}
+
+.con1, .con2, .con3{
+    border: solid black;
+    border-radius: 10px;
+    width: 20%; 
+    height: 600px;
+    line-height: 1.5; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.c2{
+    background-color: #d1c1d8;
+    ;
+}
+ 
+.c2{
+    background-color: #f0d9e7;
+}
+ 
+.c3{
+    background-color: #d1c1d8;
+}
+
+
