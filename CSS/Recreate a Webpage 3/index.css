@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f6;
+}
+
+.header-container {
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: #33599e;
+}
+
+img {
+    width: 250px;
+    margin-left: 170px;
+    fill: #ecf0f6;
+    color: #ecf0f6;
+}
+
+.login-form {
+    margin-left: 60%;
+}
+
+button
