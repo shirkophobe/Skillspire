@@ -14,10 +14,28 @@ img {
     margin-left: 170px;
     fill: #ecf0f6;
     color: #ecf0f6;
+} 
+
+img.logo {
+    width: 250px; 
+    margin-left: 170px;   
+    filter: invert(100%) brightness(0) saturate(100%); 
 }
 
 .login-form {
-    margin-left: 60%;
+    display: flex;
+    position: absolute;
+    font-family: verdana;
+    left: 58%;
+    top: 15px;
 }
 
-button
+.logo {
+    filter: invert(100%);
+    
+} 
+
+.tform form {
+    display: flex;
+    align-items: center;
+}
