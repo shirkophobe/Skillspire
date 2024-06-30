@@ -4,6 +4,8 @@ body {
 }
 
 .header-container {
+    display: flexbox;
+    height: 30%;
     text-align: left;
     margin-bottom: 20px;
     background-color: #33599e;
@@ -13,8 +15,7 @@ img {
     width: 250px;
     margin-left: 170px;
     fill: #ecf0f6;
-    color: #ecf0f6;
-} 
+}
 
 img.logo {
     width: 250px; 
@@ -35,7 +36,3 @@ img.logo {
     
 } 
 
-.tform form {
-    display: flex;
-    align-items: center;
-}

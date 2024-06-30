@@ -2,8 +2,12 @@
     outline: dotted red 2px;
   } */
 
+  body {
+    margin:0px 
+  } 
+
 .header-footer {
-  width: 100%;
+  width: 98%;
   height: 95px;
   text-align: left;
 }
@@ -20,8 +24,8 @@ a {
 
 #side-nav {
   width: 20%;
-  height: 500px;
-  border: solid 4px;
+  height: 675px;
+  border: solid 5px;
   border-color: #800980;
   border-radius: 20px;
   text-align: left;
@@ -31,8 +35,8 @@ a {
 
 #yellow1 {
   background-color: #fefc00;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   color: black;
   text-align: center;
@@ -42,8 +46,8 @@ a {
 
 #yellow2 {
   background-color: #fefc00;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   color: black;
   text-align: center;
@@ -53,8 +57,8 @@ a {
 
 #yellow3 {
   background-color: #fefc00;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   color: black;
   text-align: center;
@@ -64,8 +68,8 @@ a {
 
 #yellow4 {
     background-color: #fefc00;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     color: black;
     text-align: center;
@@ -75,8 +79,8 @@ a {
 
   #yellow5 {
     background-color: #fefc00;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     color: black;
     text-align: center;
@@ -86,8 +90,8 @@ a {
 
   #yellow6 {
     background-color: #fefc00;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     color: black;
     text-align: center;
@@ -97,8 +101,8 @@ a {
 
   #yellow7 {
     background-color: #fefc00;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     color: black;
     text-align: center;
@@ -108,8 +112,8 @@ a {
 
   #yellow8 {
     background-color: #fefc00;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     color: black;
     text-align: center;

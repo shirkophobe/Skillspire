@@ -127,11 +127,9 @@ section{
 .signup_body .signup_form .month,
 .signup_body .signup_form .year{
     height: 28px;
+    background-color: gray;
 }
-.signup_body .signup_form .day,
-.signup_body .signup_form .year{
-    margin-left: -5px;
-}
+
 .signup_body .signup_form .brth_hint{
     font-size: 11px;
     padding-left: 170px;

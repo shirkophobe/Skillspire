@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Sign Up</title>
+    <link rel="stylesheet" href="indexDEMO.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <h1>facebook</h1>
+            </div>
+            <div class="login-form">
+                <form>
+                    <input type="text" placeholder="Email or Phone" class="input-field">
+                    <input type="password" placeholder="Password" class="input-field">
+                    <button type="submit" class="login-btn">Log In</button>
+                    <div class="keep-logged-in">
+                        <input type="checkbox" id="keep-logged-in">
+                        <label for="keep-logged-in">Keep me logged in</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                </form>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="left-column">
+                <h2>Connect with friends and the world around you on Facebook.</h2>
+                <ul>
+                    <li><strong>See photos and updates</strong> from friends in News Feed</li>
+                    <li><strong>Share what's new</strong> in your life on your timeline</li>
+                    <li><strong>Find more</strong> of what you're looking for with graph search</li>
+                </ul>
+            </div>
+            <div class="right-column">
+                <div class="signup-form">
+                    <h2>Sign Up</h2>
+                    <p>It's free and always will be</p>
+                    <form>
+                        <div class="name-fields">
+                            <input type="text" placeholder="First name" class="input-field">
+                            <input type="text" placeholder="Last name" class="input-field">
+                        </div>
+                        <input type="text" placeholder="Email or mobile number" class="input-field">
+                        <input type="text" placeholder="Re-enter email or mobile number" class="input-field">
+                        <input type="password" placeholder="New password" class="input-field">
+                        <div class="birthday-section">
+                            <label for="birthday">Birthday</label>
+                            <select id="day" name="day" class="dropdown">
+                                <option value="">Day</option>
+                                <!-- Populate days here -->
+                            </select>
+                            <select id="month" name="month" class="dropdown">
+                                <option value="">Month</option>
+                                <!-- Populate months here -->
+                            </select>
+                            <select id="year" name="year" class="dropdown">
+                                <option value="">Year</option>
+                                <!-- Populate years here -->
+                            </select>
+                            <a href="#">Why do I need to provide my birthday?</a>
+                        </div>
+                        <div class="gender-section">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <p>By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Use Policy</a>, including our <a href="#">Cookie Use</a>.</p>
+                        <button type="submit" class="signup-btn">Sign Up</button>
+                    </form>
+                    <a href="#" class="create-page">Create a Page</a> for a celebrity, band or business.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

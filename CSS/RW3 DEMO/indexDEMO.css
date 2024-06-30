@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b5998;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+}
+
+.login-form form {
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    margin: 0 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.login-btn {
+    background-color: #4267b2;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.keep-logged-in {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.forgot-password {
+    margin-left: 10px;
+    color: #4267b2;
+    text-decoration: none;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.left-column {
+    width: 50%;
+}
+
+.left-column h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.left-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-column li {
+    margin-bottom: 10px;
+}
+
+.right-column {
+    width: 40%;
+}
+
+.signup-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    margin-bottom: 10px;
+}
+
+.signup-form p {
+    margin: 10px 0;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-fields .input-field {
+    width: 48%;
+}
+
+.birthday-section {
+    margin-top: 10px;
+}
+
+.birthday-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    margin-right: 5px;
+}
+
+.gender-section {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.signup-btn {
+    background-color: #42b72a;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.create-page {
+    display: block;
+    margin-top: 10px;
+    color: #4267b2;
+    text-decoration: none;
+}

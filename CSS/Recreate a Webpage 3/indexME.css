@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-height: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #3b5998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    height: 120px;
+    width: 100%;
+}
+
+.logo {
+    margin-left: 100px;
+    width: 200px;
+}
+
+.login_form {
+        margin-right: 270px;
+        align-items: center;
+        color:white;
+}
+
+.input-field-top {
+    background-color: #fbffb2;
+    margin:10px;
+    margin-left: 1px;
+}
+
+.login-button {
+    background-color: #4267b2;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.keep-logged-in {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.forgot-password {
+    margin-right: 110px;
+    text-decoration: none;
+    float: right;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    margin-left: 230px;
+}
+
+.left-column {
+    width: 50%;
+}
+
+.left-column h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.left-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 50px;
+}
+
+.left-column li {
+    margin-bottom: 10px;
+}
+
+.right-column {
+    width: 40%;
+}
+
+.signup-form {
+    background-color: none;
+    
+    
+}
+
+.signup-form h2 {
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.signup-form p {
+    margin: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+    width:400px;
+}
+
+.name-fields {
+    display: flex;
+    width: 408px;
+    height: 40px;
+    margin-bottom: 17px;
+    
+}
+
+.input-field {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.birthday-section {
+    margin-top: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flexbox;
+}
+
+.birthday-section label {
+    display: block;
+}
+
+.dropdown {
+    margin-right: 5px;
+    background-color: lightgray;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.gender-section {
+    display: flex;
+    align-items: center;
+    margin:20px 0;
+    margin-left:-5px;
+  
+}
+
+.terms-text {
+    margin-left: -10px;
+}
+
+.signup-button {
+    background-color: #42b72a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.hr {
+    background-color: lightslategray;
+    margin-bottom: 30px;
+}
+
+.create-page {
+    display: inline;
+    color: #4267b2;
+    text-decoration: none;
+}
+
+a {
+    display: inline-block;
+    font-size: smaller;
+}
+
+
