@@ -38,7 +38,7 @@ for (var i = 1; i <= 20; i += 2) {
   console.log(i);
 }
 
-// Create a for loop that starts at 1 and ends at 10. If a value if even have the console print out “FIZZ”.
+// Create a for loop that starts at 1 and ends at 10. If a value is even have the console print out “FIZZ”.
 //  If the value is odd have the console print out “BUZZ”.
 for (let i = 1; i <= 10; i++) {
   if (i % 2 === 0) {
