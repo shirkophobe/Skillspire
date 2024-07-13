@@ -3,7 +3,7 @@
     <head>
         <meta chardet="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Assignment 3</title>
+        <title>Assignment 4</title>
         
     </head>
     <body>
@@ -11,7 +11,21 @@
     </body>
 
     <script>
-      
-        </script> 
+      function promptUser() {
+            let fullName = prompt("Please enter your full name")
+            let favoriteFood = prompt("Please enter your favorite food")
+            let favoriteActivity = prompt("Please enter your favorite activity")
+
+            console.log(fullName)
+            console.log(favoriteFood)
+            console.log(favoriteActivity)
+
+            document.write(`<h1>Full Name: ${fullName}</h1>`)
+            document.write(`<h1>Favorite Food: ${favoriteFood}</h1>`)
+            document.write(`<h1>Favorite Activity: ${favoriteActivity}</h1>`)
+        }
+
+        promptUser()
+    </script> 
 
 </html>
