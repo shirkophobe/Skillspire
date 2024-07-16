@@ -7,12 +7,51 @@
         
     </head>
     <body>
+
+        <form id="info-form">
+            <label for="First Name">First Name</label><br>
+            <input type="text" name="First Name" id="First Name"><br>
+    
+            <label for="Last Name">Last Name</label><br>
+            <input type="text" name="Last Name" id="Last Name"><br>
+    
+            <label for="Email">Email</label><br>
+            <input type="email" name="Email" id="Email"><br>
+    
+            <label for="Age">Age</label><br>
+            <input type="number" name="Age" id="Age"><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    
+        <div id="info">
+    
+        </div>
        
     </body>
+    
 
     <script>
-        
+            var form = document.getElementById("info-form")
+            var info = document.getElementById("info")
 
-    </script> 
+            form.addEventListener('submit', function(){
+
+                event.preventDefault()
+            
+                var firstNameInput = document.getElementById("First Name")
+                var lastNameInput = document.getElementById("Last Name")
+                var emailInput = document.getElementById("Email")
+                var ageInput = document.getElementById("Age")
+
+                document.write("<h1>First Name: " + firstNameInput.value + "</h1>")
+                document.write("<h1>Last Name: " + lastNameInput.value + "</h1>")
+                document.write("<h1>Email: " + emailInput.value + "</h1>")
+                document.write("<h1>Age: " + ageInput.value + "</h1>")
+            
+            
+            
+            }) 
+        </script> 
 
 </html>
