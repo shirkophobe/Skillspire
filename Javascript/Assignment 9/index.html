@@ -4,13 +4,49 @@
     <meta chardet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 9</title>
+
+
+        <script>
+
+            //Create a function that accepts an array and replaces all negative values in the 
+            //array with the word "Negative". Example [-1,2,-3,4,-5] returns ["Negative",2,"Negative",4,"Negative"]
+
+            function replaceWithNegative(arr){
+                for(let i = 0;i<arr.length;i++){
+                    if(arr[i] < 0){
+                        arr[i] = "Negative"
+                    }
+                }
+
+                return arr
+            }
+
+            
+            //Create a function that accepts a string and returns that 
+            //string but reversed. Example: Given "string"  return "gnirts"
+
+            //1. Create an empty string variable
+            //2. start your for loop at the back of the string that is being passed in
+            //3. concatenate string values to new empty string
+
+            function reverseString(string){
+                var reversedString = ""
+
+                for(let i = string.length - 1; i>=0 ;i--){
+                    reversedString += string[i]
+                }
+
+                return reversedString
+            }
+
+            var backwardString = reverseString("string")
+
+            console.log(backwardString)
+
+        </script>
   </head>
 
-  <body>
+    <body>
     
-  </body>
-
-  <script>
-
-  </script>
+    </body>
 </html>
