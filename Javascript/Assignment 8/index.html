@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta chardet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8</title>
+  </head>
+
+  <body>
+    <button id="colorButton">Change color</button>
+
+    <div style="width: 500px; height: 500px; border: solid black 3px">
+      <h1>Change Me</h1>
+    </div>
+  </body>
+
+  <script>
+    var randomColor = function () {
+      var rvalue = function () {
+        return Math.round(Math.random() * 255);
+      };
+
+      return "rgb(" + rvalue() + "," + rvalue() + "," + rvalue() + ")";
+    };
+
+    let button = document.querySelector("button");
+
+    button.onclick = function () {
+      let div = document.querySelector("div");
+      div.style.backgroundColor = randomColor();
+    };
+  </script>
+</html>
