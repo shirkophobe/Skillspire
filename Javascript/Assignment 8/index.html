@@ -4,30 +4,42 @@
     <meta chardet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 8</title>
+
+        
   </head>
+  <style>
+
+    div{
+      width:400px;
+      height:400px;
+      border: 3px solid black;
+    }
+  </style>
 
   <body>
-    <button id="colorButton">Change color</button>
 
-    <div style="width: 500px; height: 500px; border: solid black 3px">
-      <h1>Change Me</h1>
-    </div>
+    <button id="change-color"> Change Color</button>
+
+        <div id="box">
+          <h1>Change me</h1>
   </body>
 
   <script>
-    var randomColor = function () {
-      var rvalue = function () {
-        return Math.round(Math.random() * 255);
-      };
 
-      return "rgb(" + rvalue() + "," + rvalue() + "," + rvalue() + ")";
-    };
 
-    let button = document.querySelector("button");
 
-    button.onclick = function () {
-      let div = document.querySelector("div");
-      div.style.backgroundColor = randomColor();
-    };
+var button =document.getElementById("change-color")
+
+var div = document.getElementById("box")
+
+button.addEventListener("click", function(){
+  var colors =["yellow", "blue", "red", "green", "purple"]
+
+  var randomNumber = Math.floor(Math.random() * colors.length)
+  div.style.backgroundColor = colors[randomNumber]
+
+
+})
+        
   </script>
 </html>
