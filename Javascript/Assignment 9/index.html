@@ -9,39 +9,54 @@
         <script>
 
             //Create a function that accepts an array and replaces all negative values in the 
-            //array with the word "Negative". Example [-1,2,-3,4,-5] returns ["Negative",2,"Negative",4,"Negative"]
+            //array with the word "Negative". Example  returns ["Negative",2,"Negative",4,"Negative"]
 
-            function replaceWithNegative(arr){
-                for(let i = 0; i<arr.length; i++){
-                    if(arr[i] < 0){
-                        arr[i] = "Negative"
+            // 1. Create a function that accepts a parameter (array).
+            // 2. Create a for loop that starts at index 0 and ends at array.length -1
+            // 3. Inside the for loop add an if statement to check if a number is negative
+            //    if the number is negative, then update the value that is at that index
+            // 4. Return array
+
+            
+            function replaceNegatives(array){
+                for(var index = 0; index < array.length; index++){
+                    if(array[index] < 0){
+                        array[index] = "Negative"
                     }
                 }
 
-                return arr
+                return array
             }
+
+            
+            console.log(replaceNegatives ( [-1,2,-3,4,-5] ) )
 
             
             // //Create a function that accepts a string and returns that 
             // //string but reversed. Example: Given "string"  return "gnirts"
 
-            // //1. Create an empty string variable
-            // //2. start your for loop at the back of the string that is being passed in
-            // //3. concatenate string values to new empty string
 
-            // function reverseString(string){
-            //     var reversedString = ""
+            // 1. Create a function that accepts 1 parameter (a string)
+            // 2. Create a string variable and set it to an empty string
+            // 3. Create a for loop that starts at string.length -1 and ends at 0
+            // 4. Inside the for loop add the value that is at the current string index to the 
+            // string variable that was created
+            // 5. Return the updated string variable
 
-            //     for(let i = string.length - 1; i>=0 ;i--){
-            //         reversedString += string[i]
-            //     }
+            function reverseString(string){
+                let outputString = ""
 
-            //     return reversedString
-            // }
+                for(let index = string.length -1; index >=0; index--){
+                    outputString += string[index]
+                }
 
-            // var backwardString = reverseString("string")
+                    return outputString
 
-            // console.log(backwardString)
+                    
+                }
+
+                console.log(reverseString("string"))
+            
 
         </script>
   </head>
