@@ -10,7 +10,7 @@ console.log(2 + 2);
 // Use string concatenation to combine your first and last name. Print this to the console.
 var firstName = "James",
   lastName = "Browne";
-var wholeName = firstName + lastName;
+var wholeName = firstName + " " + lastName;
 console.log(wholeName);
 
 // Create a for loop that prints all values from 1-10
