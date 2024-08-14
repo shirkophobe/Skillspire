@@ -8,11 +8,11 @@ are absolutely necessary.'''
 def replace_ones_with_twos(binary_string):
     new_string = ""
     
-    for char in binary_string:
-        if char == "1":
+    for character in binary_string:
+        if character == "1":
             new_string += "2"
         else:
-            new_string += char
+            new_string += character
     
     return new_string
 
