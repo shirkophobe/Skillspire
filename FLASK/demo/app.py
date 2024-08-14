@@ -1,28 +1,11 @@
-# from flask import Flask
-
-# app = Flask(__name__)
-
-# @app.route("/")
-
-# def hello():
-#     return "<h1>Hello World!</h1>"
-        
-# if __name__ == "__main__":
-#     app.run(debug = True, port = 5500)
-    
-from flask import Flask
+from flask import Flask, render_template
  
 app = Flask(__name__)
  
-@app.route('/home')
+@app.route('/test')
  
 def root():
-    return "<h1> Paws Rescue Center 🐾 </h1>"
- 
-@app.route('/about')
- 
-def routeOne():
-    return "We are a non-profit organization working as an animal rescue. We aim to help you connect with the purrfect furbaby for you! The animals you find on our website are rescued and rehabilitated animals. Our mission is to promote the ideology 'adopt, don't hop!'"
-    
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(debug = True, port = 5500)
