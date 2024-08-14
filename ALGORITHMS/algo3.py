@@ -9,8 +9,8 @@ def replace_ones_with_twos(binary_string):
     new_string = ""
     
     for char in binary_string:
-        if char == '1':
-            new_string += '2'
+        if char == "1":
+            new_string += "2"
         else:
             new_string += char
     
