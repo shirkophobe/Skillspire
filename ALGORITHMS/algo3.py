@@ -5,10 +5,10 @@ array of characters that can’t be altered. So you will have to create a new st
 from scratch and use that as your return string. No built in functions unless they 
 are absolutely necessary.'''
 
-def replace_ones_with_twos(binary_string):
+def replace_ones_with_twos(original_string):
     new_string = ""
     
-    for character in binary_string:
+    for character in original_string:
         if character == "1":
             new_string += "2"
         else:
@@ -16,5 +16,5 @@ def replace_ones_with_twos(binary_string):
     
     return new_string
 
-binary_string = "1001011"
-print("The new string is:", replace_ones_with_twos(binary_string))
+original_string = "1001011"
+print("The new string is:", replace_ones_with_twos(original_string))
