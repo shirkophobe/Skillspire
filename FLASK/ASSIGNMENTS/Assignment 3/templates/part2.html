@@ -1,0 +1,16 @@
+<html>
+    <head>
+ 
+    </head>
+ 
+    <body>
+        {% for i in range(1,11) %}
+            {% if i % 2 == 0: %}
+                <h3>Even {{i}}</h3>
+            {% else %}
+                <h3>Odd {{ i }}</h3>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>
+
