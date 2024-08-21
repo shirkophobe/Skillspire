@@ -1,30 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Information Form</title>
-</head>
-<body>
-    <h1>User Information Form</h1>
-    <form method="POST">
-        <label for="first_name">First Name:</label><br>
-        <input type="text" id="first_name" name="first_name" required><br><br>
 
-        <label for="last_name">Last Name:</label><br>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Input</title>
+ 
+    <body>
+       <form action = "/formdata" method="POST">
+            <label>First Name:</label><br>
+            <input type = "text" name="first_name"><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <label>Last Name:</label><br>
+            <input type = "text" name="last_name"><br>
 
-        <label for="address">Home Address:</label><br>
-        <input type="text" id="address" name="address" required><br><br>
+            <label>Email:</label><br>
+            <input type = "text" name="email"><br>
 
-        <label for="city">City:</label><br>
-        <input type="text" id="city" name="city" required><br><br>
+            <label>Address:</label><br>
+            <input type = "text" name="address"><br>
 
-        <label for="state">State:</label><br>
-        <select id="state" name="state" required>
+            <label>City:</label><br>
+            <input type = "text" name="city"><br>
+
+            <label for="state">State:</label><br>
             <select id="state" name="state" required>
                 <option value="" selected="selected">Select a State</option>
                 <option value="AL">Alabama</option>
@@ -78,10 +77,10 @@
                 <option value="WV">West Virginia</option>
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
-            </select><br><br>
+                </select><br>
 
-            <label>Zip Code:</label><br>
-            <input type="text" id="zip_code" name="zip_code" required><br><br>
+                <label>Zip Code:</label><br>
+            <input type = "text" name="zip_code"><br>
 
             <input type="submit" value="Submit">
        </form>
