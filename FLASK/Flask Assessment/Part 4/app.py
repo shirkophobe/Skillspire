@@ -29,7 +29,7 @@ def login():
 @app.route('/admin')
 def admin():
     if 'logged_in' in session and session['logged_in']:
-        return render_template('admin.html', logged_in=True)
+        return render_template('admin.html', logged_in = True)
     else:
         flash('You must be logged in to access the admin panel', 'error')
         return redirect(url_for('login'))
