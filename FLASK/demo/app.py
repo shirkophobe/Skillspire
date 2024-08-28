@@ -15,11 +15,12 @@ class Customer(db.Model):
     phone_number = db.Column(db.Integer, nullable = False)
     country = db.Column(db.String(200), nullable = False)
     
+ @app.route('/')
  
-@app.route('/')
- 
-def root():
+def default():
     return render_template("form.html")
 
 if __name__ == "__main__":
-    app.run(debug = True, port = 5500)
+    with app.app_context():
+        db.create_all()
+        app.run(debug = True, port = 5500)
