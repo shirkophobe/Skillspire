@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a Course</title>
+    <style>
+        .btn-red {
+            background-color: red;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-red:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete a course</h1>
+    <p>Are you sure you want to delete the following course?</p>
+    <p><strong>Name:</strong> {{ course.name }}</p>
+    <p><strong>Description:</strong> {{ course.description }}</p>
+
+    <form action="{{ url_for('confirm_delete', course_id=course_id) }}" method="POST">
+        <button type="submit" name="confirm" class="btn-red">Yes! I want to delete this</button>
+        <button type="submit" name="cancel">No</button>
+    </form>
+</body>
+</html>
