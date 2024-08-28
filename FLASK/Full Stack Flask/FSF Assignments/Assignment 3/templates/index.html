@@ -59,7 +59,7 @@
             <td>{{ course.name }}</td>
             <td>{{ course.description }}</td>
             <td>{{ course.date_added }}</td>
-            <td><a href="{{ url_for('confirm_delete', course_id=loop.index) }}">remove</a></td> <!-- Adjusting index -->
+            <td><a href="{{ url_for('confirm_delete', course_id=loop.index) }}">remove</a></td> 
         </tr>
         {% endfor %}
     </table>
