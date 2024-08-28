@@ -6,6 +6,15 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 
 app.secret_key = 'secret'
+
+db = SQLAlchemy(app)
+
+class Customer(db.Model):
+    customer_id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(200), nullable = False)
+    phone_number = db.Column(db.Integer, nullable = False)
+    country = db.Column(db.String(200), nullable = False)
+    
  
 @app.route('/')
  
