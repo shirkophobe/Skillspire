@@ -53,19 +53,15 @@ def display(user_id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Get form data
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # Query the database for the user
         user = User.query.filter_by(username=username, password=password).first()
 
         if user:
-            # Successful login
             session['user_id'] = user.id
             return redirect(url_for('welcome', username=user.username))
         else:
-            # Invalid credentials
             flash('Invalid username or password', 'error')
             return redirect(url_for('login'))
 
