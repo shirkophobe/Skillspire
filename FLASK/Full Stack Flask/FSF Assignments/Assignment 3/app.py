@@ -4,7 +4,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# In-memory "database"
 courses = []
 
 @app.route('/')
@@ -29,11 +28,11 @@ def confirm_delete(course_id):
     if course_id > len(courses) or course_id < 1:
         return redirect(url_for('index'))
     
-    course_to_delete = courses[course_id - 1]  # Adjust for zero-indexing
+    course_to_delete = courses[course_id - 1]  
     
     if request.method == 'POST':
         if 'confirm' in request.form:
-            courses.pop(course_id - 1)  # Adjust for zero-indexing
+            courses.pop(course_id - 1)  
             return redirect(url_for('index'))
         else:
             return redirect(url_for('index'))
