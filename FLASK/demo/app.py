@@ -15,7 +15,7 @@ class Customer(db.Model):
     phone_number = db.Column(db.Integer, nullable = False)
     country = db.Column(db.String(200), nullable = False)
     
- @app.route('/')
+@app.route('/')
  
 def default():
     return render_template("form.html")
