@@ -3,7 +3,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Mock database as a list of dictionaries
 users = [
     {'id': 1, 'first_name': 'Jimmy', 'last_name': 'Jun', 'email': 'jjun@gmail.com', 'created_at': 'June 15th, 2015'},
     {'id': 2, 'first_name': 'Andrew', 'last_name': 'Lee', 'email': 'alee@gmail.com', 'created_at': 'June 16th, 2015'},
@@ -55,7 +54,6 @@ def destroy(user_id):
     global users
     users = [u for u in users if u['id'] != user_id]
 
-    # Re-indexing IDs
     for i, user in enumerate(users):
         user['id'] = i + 1
 
