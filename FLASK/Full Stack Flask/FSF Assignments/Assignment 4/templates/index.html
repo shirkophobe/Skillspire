@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users Index</title>
+    <style>
+        table {
+            width: 98%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #cccccc; /* Set the header background color */
+        }
+        td.actions {
+            text-align: left;
+            white-space: nowrap; /* Prevents the links from wrapping */
+        }
+        .actions a {
+            margin-right: 10px; /* Adds space between links */
+            
+            color: #007BFF;
+        }
+        .actions a:last-child {
+            margin-right: 0; /* Removes margin after the last link */
+        }
+        tr td {
+            vertical-align: middle; /* Align text and links vertically in the middle */
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td><a href="{{ url_for('show', user_id=user.id) }}">{{ user.first_name }} {{ user.last_name }}</a></td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.created_at }}</td>
+                <td class="actions">
+                    <a href="{{ url_for('show', user_id=user.id) }}">Show</a>
+                    <a href="{{ url_for('edit', user_id=user.id) }}">Edit</a>
+                    <form action="{{ url_for('destroy', user_id=user.id) }}" method="POST" style="display:inline;">
+                        <a href="#" onclick="this.closest('form').submit(); return false;">Delete</a>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('new') }}">Add a new user</a>
+</body>
+</html>

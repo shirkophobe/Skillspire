@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User {{ user.id }}</title>
+    <style>
+        .container {
+            margin: 20px; /* Adds space around the container */
+        }
+        .actions {
+            margin-top: 20px; /* Adds space above the actions */
+        }
+        .actions a {
+            text-decoration: none;
+            color: #007BFF;
+            margin-right: 10px; /* Space between links */
+        }
+        .actions a:last-child {
+            margin-right: 0; /* No margin after the last link */
+        }
+        .separator {
+            margin: 0 5px; /* Adds smaller space around the separator */
+        }
+        .back-link {
+            margin-top: 20px; /* Space above the Go Back link */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User {{ user.id }}</h1>
+        <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Created at: {{ user.created_at }}</p>
+        <div class="actions">
+            <a href="{{ url_for('edit', user_id=user.id) }}">Edit</a>
+            <span class="separator">|</span>
+            <form action="{{ url_for('destroy', user_id=user.id) }}" method="POST" style="display:inline;">
+                <a href="#" onclick="this.closest('form').submit(); return false;">Delete</a>
+            </form>
+        </div>
+        <a href="{{ url_for('index') }}" class="back-link">Go Back</a>
+    </div>
+</body>
+</html>

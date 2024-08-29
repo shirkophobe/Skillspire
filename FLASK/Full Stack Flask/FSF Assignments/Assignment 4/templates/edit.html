@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User {{ user.id }}</title>
+    <style>
+        .container {
+            margin: 20px; /* Adds space around the container */
+        }
+        form {
+            margin-bottom: 20px; /* Adds space below the form */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px; /* Consistent spacing above the input fields */
+        }
+        input[type="text"], input[type="email"] {
+            width: 300px; /* Sets the width of the input fields */
+            padding: 8px; /* Adds space inside the input fields */
+            margin-bottom: 10px; /* Adds space below the input fields */
+        }
+        button {
+            margin-top: 20px; /* Adds space above the button */
+            padding: 8px 12px;
+            background-color: #007BFF; /* Blue button */
+            color: white;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            display: block; /* Forces the button onto a new line */
+        }
+        button:hover {
+            background-color: #0056b3; /* Changes color on hover */
+        }
+        .links {
+            margin-top: 20px; /* Adds space above the links */
+        }
+        .links a {
+            text-decoration: none;
+            padding: 8px 12px;
+            color: #007BFF;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .links a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User {{ user.id }}</h1>
+        <form action="{{ url_for('edit', user_id=user.id) }}" method="POST">
+            <label for="first_name">First name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}">
+            <label for="last_name">Last name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}">
+            <button type="submit">Update</button>
+        </form>
+        <div class="links">
+            <a href="{{ url_for('show', user_id=user.id) }}">Show</a> |
+            <a href="{{ url_for('index') }}">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
