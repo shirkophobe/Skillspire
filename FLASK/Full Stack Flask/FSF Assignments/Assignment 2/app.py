@@ -6,10 +6,9 @@ app = Flask(__name__)
 # Configuring the SQLite database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'your_secret_key'  # Replace with a strong secret key
+app.secret_key = 'my_secret_key'  
 db = SQLAlchemy(app)
 
-# Model for the User table
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
@@ -18,35 +17,29 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
-# Creating the database and the User table
 with app.app_context():
     db.create_all()
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        # Get form data
         first_name = request.form.get('first_name')
         last_name = request.form.get('last_name')
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # Create a new user record
         new_user = User(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
         
-        # Save the user to the database
         db.session.add(new_user)
         db.session.commit()
 
-        # Redirect to the display page
         return redirect(url_for('display', user_id=new_user.id))
 
     return render_template('register.html')
 
 @app.route('/display/<int:user_id>')
 def display(user_id):
-    # Fetch the user data by ID
     user = User.query.get_or_404(user_id)
     return render_template('display.html', user=user)
 

@@ -1,43 +1,48 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'my_secret_key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courses.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'your_secret_key'
+db = SQLAlchemy(app)
 
-courses = []
+class Course(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
+    date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
-@app.route('/')
+@app.before_request
+def create_tables():
+    db.create_all()
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    if request.method == 'POST':
+        name = request.form['name']
+        description = request.form['description']
+        if not name or not description:
+            flash('Name and description cannot be empty!')
+            return redirect(url_for('index'))
+        
+        new_course = Course(name=name, description=description)
+        db.session.add(new_course)
+        db.session.commit()
+        return redirect(url_for('index'))
+
+    courses = Course.query.order_by(Course.date_added.desc()).all()
     return render_template('index.html', courses=courses)
 
-@app.route('/add_course', methods=['POST'])
-def add_course():
-    name = request.form['name']
-    description = request.form['description']
-    date_added = datetime.now().strftime("%b %d %Y %I:%M%p")
-    if name and description:
-        courses.append({
-            'name': name,
-            'description': description,
-            'date_added': date_added
-        })
-    return redirect(url_for('index'))
-
 @app.route('/courses/destroy/<int:course_id>', methods=['GET', 'POST'])
-def confirm_delete(course_id):
-    if course_id > len(courses) or course_id < 1:
-        return redirect(url_for('index'))
-    
-    course_to_delete = courses[course_id - 1]  
-    
+def destroy(course_id):
+    course = Course.query.get_or_404(course_id)
     if request.method == 'POST':
-        if 'confirm' in request.form:
-            courses.pop(course_id - 1)  
-            return redirect(url_for('index'))
-        else:
-            return redirect(url_for('index'))
-    
-    return render_template('confirm_delete.html', course=course_to_delete, course_id=course_id)
+        db.session.delete(course)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('confirm_delete.html', course=course)
 
 if __name__ == '__main__':
     app.run(debug=True, port = 5500)
