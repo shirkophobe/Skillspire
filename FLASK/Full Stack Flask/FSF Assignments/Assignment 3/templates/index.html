@@ -1,52 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Management</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 10px;
-        }
-        th, td {
-            text-align: left;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .description-box {
-            width: 100%;
-            height: 100px;
-        }
-        .btn-green {
-            background-color: green;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-green:hover {
-            background-color: darkgreen;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Add a new course</h1>
-    <form action="{{ url_for('add_course') }}" method="POST">
-        <div class="form-group">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description" class="description-box" required></textarea><br>
-        </div>
-        <button type="submit" class="btn-green">Add</button>
+    <form action="/add" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Add</button>
     </form>
-
+    <hr>
     <h2>Courses</h2>
     <table>
         <tr>
@@ -59,8 +27,8 @@
         <tr>
             <td>{{ course.name }}</td>
             <td>{{ course.description }}</td>
-            <td>{{ course.date_added }}</td>
-            <td><a href="{{ url_for('confirm_delete', course_id=loop.index) }}">remove</a></td> 
+            <td>{{ course.date_added.strftime('%b %d %Y %I:%M%p') }}</td>
+            <td><a href="{{ url_for('delete_course', id=course.id) }}">remove</a></td>
         </tr>
         {% endfor %}
     </table>

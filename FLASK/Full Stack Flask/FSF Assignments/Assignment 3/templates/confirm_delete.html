@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete a Course</title>
-    <style>
-        .btn-red {
-            background-color: red;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-red:hover {
-            background-color: darkred;
-        }
-    </style>
+    <title>Delete a course</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Delete a course</h1>
     <p>Are you sure you want to delete the following course?</p>
     <p><strong>Name:</strong> {{ course.name }}</p>
     <p><strong>Description:</strong> {{ course.description }}</p>
-
-    <form action="{{ url_for('confirm_delete', course_id=course_id) }}" method="POST">
-        <button type="submit" name="confirm" class="btn-red">Yes! I want to delete this</button>
-        <button type="submit" name="cancel">No</button>
+    <form method="POST">
+        <button type="submit" style="background-color: red; color: white;">Yes! I want to delete this</button>
+        <a href="{{ url_for('index') }}">No</a>
     </form>
 </body>
 </html>
