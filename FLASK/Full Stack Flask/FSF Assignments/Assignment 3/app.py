@@ -38,7 +38,6 @@ def delete_course(id):
         db.session.delete(course)
         db.session.commit()
         
-        # Reindex courses after deletion
         courses = Course.query.order_by(Course.id).all()
         for i, course in enumerate(courses, start=1):
             course.id = i
