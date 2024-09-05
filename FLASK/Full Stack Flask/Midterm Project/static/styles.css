@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #051427; /* Seahawks navy blue */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the WELCOME TO HAWK CHAT! text */
+.stripe {
+    background-color: #b5b6b8; /* Gray stripes */
+    height: 50px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-stripe-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #051427;
+    text-align: center;
+}
+
+/* Style for the navigation bar */
+nav.navbar {
+    background-color: #b5b6b8; /* Gray stripe */
+    text-align: center;
+    padding: 10px 0;  
+}
+
+nav.navbar ul.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the nav items to the right */
+}
+
+nav.navbar ul.navbar-menu li {
+    margin: 0 15px;
+}
+
+nav.navbar ul.navbar-menu li a {
+    color: #051427;  /* Seahawks navy blue for nav links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;  /* Add underline effect on hover */
+}
+
+/* Rest of the styles */
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #051427;
+}
+
+h1, h2 {
+    color: #00FF00; /* Seahawks action green */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00FF00; /* Seahawks action green */
+    color: #051427;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b5b6b8; /* Gray hover */
+}
+
+.post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Ensure post-actions are on one line */
+.post-actions {
+    font-size: 0.9em;
+    color: #00FF00;
+    display: inline-flex;
+    align-items: center;
+}
+
+.post-actions .post-action-link, .post-actions .delete-link {
+    color: #00FF00;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.post-actions .separator {
+    margin: 0 5px;
+    color: #00FF00;
+}
+
+/* Delete link styling to look like text */
+button.delete-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #00FF00;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+button.delete-link:hover,
+.post-actions .post-action-link:hover {
+    text-decoration: underline;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom:

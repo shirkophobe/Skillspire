@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Top stripe with centered text -->
+    <div class="stripe top-stripe">
+        <div class="top-stripe-text">
+            WELCOME TO HAWK CHAT!
+        </div>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li class="nav-item-right">
+                {% if session.get('username') %}
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                    <a href="{{ url_for('register') }}">Register</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Content wrapper for the logo, form, and schedule -->
+    <div class="content-wrapper">
+        <!-- Logo on the left -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='Hawks_logo_white_field.png') }}" alt="Seahawks Logo">
+        </div>
+
+        <!-- Form container in the center -->
+        <div class="form-container">
+            <div class="container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flash {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <!-- Schedule on the right -->
+        <div class="schedule-container">
+            <img src="{{ url_for('static', filename='Hawks_2024_Schedule.png') }}" alt="Seahawks 2024 Schedule">
+        </div>
+    </div>
+
+    <!-- Bottom stripe -->
+    <div class="stripe"></div>
+</body>
+</html>
