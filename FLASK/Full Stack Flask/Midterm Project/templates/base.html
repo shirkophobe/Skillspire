@@ -9,20 +9,22 @@
 <body>
     <!-- Top stripe with centered text -->
     <div class="stripe top-stripe">
-        <div class="top-stripe-text">
+        <h1 class="top-stripe-text">
             WELCOME TO HAWK CHAT!
-        </div>
+        </h1>
     </div>
 
-    <!-- Navigation menu -->
+    <!-- Navigation menu aligned to the right -->
     <nav class="navbar">
         <ul class="navbar-menu">
-            <li class="nav-item-right">
+            <li>
                 {% if session.get('username') %}
                     <a href="{{ url_for('index') }}">Home</a>
-                    <a href="{{ url_for('logout') }}">Logout</a>
+                    <span class="separator">|</span>
+                    <a href="{{ url_for('logout') }}">Log out</a>
                 {% else %}
                     <a href="{{ url_for('login') }}">Login</a>
+                    <span class="separator">|</span>
                     <a href="{{ url_for('register') }}">Register</a>
                 {% endif %}
             </li>
@@ -57,6 +59,6 @@
     </div>
 
     <!-- Bottom stripe -->
-    <div class="stripe"></div>
+    <div class="stripe bottom-stripe"></div>
 </body>
 </html>

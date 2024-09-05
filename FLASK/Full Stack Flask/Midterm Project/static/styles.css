@@ -6,28 +6,32 @@ body {
     padding: 0;
 }
 
-/* Center the WELCOME TO HAWK CHAT! text */
+/* Style for the top and bottom stripes */
 .stripe {
     background-color: #b5b6b8; /* Gray stripes */
-    height: 50px; 
+    height: 50px; /* Adjust height for consistency */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Top stripe text styling */
 .top-stripe-text {
-    font-size: 24px;
+    font-size: 24px; /* Large text for the title */
     font-weight: bold;
     color: #051427;
     text-align: center;
+    margin: 0;
 }
 
 /* Style for the navigation bar */
 nav.navbar {
     background-color: #b5b6b8; /* Gray stripe */
-    text-align: center;
-    padding: 10px 0;  
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center;
 }
 
 nav.navbar ul.navbar-menu {
@@ -35,11 +39,11 @@ nav.navbar ul.navbar-menu {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end; /* Align the nav items to the right */
 }
 
 nav.navbar ul.navbar-menu li {
-    margin: 0 15px;
+    margin-left: 20px;
+    margin-top: -10px;
 }
 
 nav.navbar ul.navbar-menu li a {
@@ -49,11 +53,17 @@ nav.navbar ul.navbar-menu li a {
     font-size: 16px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;  /* Add underline effect on hover */
+/* Add some space between Home and Logout */
+nav ul li .separator {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #051427; /* Same color and boldness as the links */
 }
 
-/* Rest of the styles */
+nav ul li a:hover {
+    text-decoration: underline;
+}
 
 .container {
     max-width: 800px;
@@ -80,7 +90,7 @@ textarea {
 
 button {
     background-color: #00FF00; /* Seahawks action green */
-    color: #051427;
+    color: #051427; /* Seahawks navy blue */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -129,7 +139,7 @@ button.delete-link {
     padding: 0;
     color: #00FF00;
     cursor: pointer;
-    text-decoration: underline;
+    
 }
 
 button.delete-link:hover,
@@ -139,4 +149,68 @@ button.delete-link:hover,
 
 .flash {
     padding: 10px;
-    margin-bottom:
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Flexbox layout for logo, form, and schedule */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Logo styles */
+.logo-container img {
+    width: 200px;
+    height: auto;
+    margin-top: -45px;
+}
+
+/* Form container */
+.form-container {
+    width: 80%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+/* Schedule container */
+.schedule-container img {
+    max-width: 390px; /* Increase the schedule size by 30% */
+    height: auto;
+    margin-top: 10px;
+}
