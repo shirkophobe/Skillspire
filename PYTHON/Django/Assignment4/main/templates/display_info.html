@@ -6,9 +6,23 @@
     <title>Personal Info</title>
 </head>
 <body>
+    {% comment %} Part 1 {% endcomment %}
     <h1>First Name: {{ first_name }}</h1>
     <h1>Last Name: {{ last_name }}</h1>
     <h1>Favorite Food: {{ favorite_food }}</h1>
     <h1>Favorite Vacation: {{ favorite_vacation }}</h1>
+
+    {% comment %} Part 2 {% endcomment %}
+    <h2>Number List:</h2>
+    {% for number in numbers %}
+        <h3>
+            {{ number }} -
+            {% if number|divisibleby:2 %}
+                even
+            {% else %}
+                odd
+            {% endif %}
+        </h3>
+    {% endfor %}
 </body>
 </html>
