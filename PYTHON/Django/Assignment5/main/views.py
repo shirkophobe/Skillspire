@@ -1,42 +1,21 @@
 from django.shortcuts import render, redirect
 
 def index(request):
-    # Check if the 'counter' session variable exists, if not, initialize it to 0
     if 'counter' not in request.session:
-        request.session['counter'] = 0
-    else:
-        # Always increment by 1 when visiting the index page
-        request.session['counter'] += 1
+        request.session['counter'] = 0  # Initialize the counter
+    elif not request.session.get('no_increment', False):
+        request.session['counter'] += 1  # Increment by 1 on every refresh
     
-    # Save the session after modifying it
-    request.session.modified = True
-
-    # Pass the counter value to the template
+    # Reset the flag so future refreshes can increment the counter again
+    request.session['no_increment'] = False
     return render(request, 'index.html', {'counter': request.session['counter']})
 
-
-def addtwo(request):
-    # Check if 'counter' exists in session, if not, initialize it to 0
-    if 'counter' not in request.session:
-        request.session['counter'] = 0
-    else:
-        # Increment by 2
-        request.session['counter'] += 2
-    
-    # Reset the flag to ensure normal increment by 1 on refresh
-    request.session['addtwo_active'] = False
-    request.session.modified = True
-
-    # Redirect back to the index page after updating the counter
-    return render(request, 'index.html', {'counter': request.session['counter']})
+def add_two(request):
+    request.session['counter'] += 2
+    request.session['no_increment'] = True  # Set the flag to prevent index from adding 1
+    return redirect('index')
 
 def reset(request):
-    # Reset the counter to 0
     request.session['counter'] = 0
-    
-    # Ensure normal increment by 1 on refresh
-    request.session['addtwo_active'] = False
-    request.session.modified = True
-
-    # Redirect back to the index page after resetting the counter
-    return render(request, 'index.html', {'counter': request.session['counter']})
+    request.session['no_increment'] = True  # Set the flag to prevent index from adding 1
+    return redirect('index')
