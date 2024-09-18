@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 # Part 1
@@ -8,7 +8,7 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-#Part 2
+# Part 2
 def greet(request, name):
     return render(request, 'index.html', {'name': name}) 
 
@@ -37,3 +37,25 @@ def submit_contact(request):
         })
 
     return HttpResponse("Invalid request method.")
+
+# Part 4
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username == 'admin' and password == 'password':
+            request.session['is_logged_in'] = True
+            return redirect('/admin')
+
+        else:
+            error_message = "Invalid username or password."
+            return render(request, 'login.html', {'error': error_message})
+
+    return render(request, 'login.html')
+
+def admin_panel(request):
+    if request.session.get('is_logged_in'):
+        return render(request, 'admin_panel.html', {'logged_in': True})
+    else:
+        return render(request, 'admin_panel.html', {'logged_in': False})
