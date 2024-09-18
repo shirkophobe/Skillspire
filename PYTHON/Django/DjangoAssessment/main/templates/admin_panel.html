@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    {% if logged_in %}
+        <p>Welcome, Admin! You are logged in.</p>
+    {% else %}
+        <p>Access Denied. You must be logged in to view this page.</p>
+    {% endif %}
+</body>
+</html>
