@@ -9,7 +9,7 @@ class User(models.Model):
         ('vegan', 'Vegan'),
         ('none', 'No preference')
     )
-    diet_preference = models.CharField(max_length=5, choices=DIET_CHOICES)
+    diet_preference = models.CharField(max_length=50, choices=DIET_CHOICES)
 
     def __str__(self):
         return self.name
