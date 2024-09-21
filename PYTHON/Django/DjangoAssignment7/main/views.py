@@ -18,6 +18,6 @@ def create_user(request):
         return redirect('home')
     return render(request, 'create_user.html')
 
-def user_detail(request, id):  # Add this view
+def user_detail(request, id):  
     user = get_object_or_404(User, id=id)
     return render(request, 'user_detail.html', {'user': user})
