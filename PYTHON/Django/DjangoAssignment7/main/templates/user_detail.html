@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Detail</title>
+</head>
+<body>
+    <h1>{{ user.name }}</h1>
+    <p>Height: {{ user.height }} cm</p>
+    <p>Weight: {{ user.weight }} lbs</p>
+    <p>Dietary Preference: 
+        {% if user.diet_preference == 'veg' %}
+            Vegetarian
+        {% elif user.diet_preference == 'vegan' %}
+            Vegan
+        {% else %}
+            No preference
+        {% endif %}
+    </p>
+    <a href="{% url 'home' %}">Go Back to User List</a>
+</body>
+</html>
