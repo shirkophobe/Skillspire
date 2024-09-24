@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib import admin
+from .models import User
+
 
 class User(models.Model):
     first_name = models.CharField(max_length=255)
