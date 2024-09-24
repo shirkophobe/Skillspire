@@ -33,3 +33,14 @@ def register(request):
         return redirect('news_feed')  # Redirect to the news feed after successful registration
     else:
         return render(request, 'register.html')
+
+from .models import Post
+
+def news_feed(request):
+    if request.method == 'POST':
+        content = request.POST['content']
+        Post.objects.create(user=request.user, content=content)
+        return redirect('news_feed')
+    else:
+        posts = Post.objects.all().order_by('-created_at')
+        return render(request, 'news_feed.html', {'posts': posts})

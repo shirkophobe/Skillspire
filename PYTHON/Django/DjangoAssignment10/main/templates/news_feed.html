@@ -1,0 +1,15 @@
+<h1>Welcome to the News Feed!</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="content">Create a post:</label><br>
+    <textarea id="content" name="content" required></textarea><br>
+    <button type="submit">Post</button>
+</form>
+
+<h2>Posts:</h2>
+<ul>
+    {% for post in posts %}
+        <li><strong>{{ post.user.first_name }}</strong>: {{ post.content }} <em>on {{ post.created_at }}</em></li>
+    {% endfor %}
+</ul>
