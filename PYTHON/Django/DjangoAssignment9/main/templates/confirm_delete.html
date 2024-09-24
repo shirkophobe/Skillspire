@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Delete User</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Delete User {{ user.first_name }} {{ user.last_name }}?</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+        <a href="/">Cancel</a>
+    </div>
+</body>
+</html>

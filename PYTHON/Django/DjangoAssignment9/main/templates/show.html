@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>User Details</title>
+</head>
+<body>
+    <div class="container">
+        <h1>User: {{ user.first_name }} {{ user.last_name }}</h1>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Created at:</strong> {{ user.created_at }}</p>
+        <div class="links">
+            <a href="/{{ user.id }}/edit">Edit</a>
+            <a href="/{{ user.id }}/delete">Delete</a>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
