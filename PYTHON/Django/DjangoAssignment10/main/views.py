@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
+from django.contrib import messages
 
 def validate_registration_data(first_name, last_name, email):
     if len(first_name) <= 1 or len(last_name) <= 1:
@@ -44,3 +45,26 @@ def news_feed(request):
     else:
         posts = Post.objects.all().order_by('-created_at')
         return render(request, 'news_feed.html', {'posts': posts})
+    
+    # New login view (add this to the existing code)
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            messages.error(request, 'No account found with this email.')
+            return redirect('login')
+
+        user = authenticate(request, username=user.username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('news_feed')
+        else:
+            messages.error(request, 'Incorrect password')
+            return redirect('login')
+    else:
+        return render(request, 'login.html')
