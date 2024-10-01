@@ -1,0 +1,47 @@
+body {
+    font-family: 'Avenir Next LT Pro', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.content {
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Adjust the width as needed */
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}

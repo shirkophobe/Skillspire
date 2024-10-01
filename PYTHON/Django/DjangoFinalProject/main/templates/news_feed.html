@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>News Feed</h2>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content" placeholder="Write your post..."></textarea>
+    <button type="submit">Post</button>
+</form>
+
+<div class="posts">
+    {% for post in posts %}
+        <div class="post">
+            <p><strong>{{ post.author.username }}</strong> - {{ post.created_at|date:"M d, Y H:i" }}</p>
+            <p>{{ post.content }}</p>
+            {% if user == post.author %}
+                <a href="{% url 'edit_post' post.id %}">Edit</a> | 
+                <a href="{% url 'delete_post' post.id %}">Delete</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+<div class="image-grid">
+    <img src="{% static 'images/2001-a-space-odyssey-1968-Earth-monolith.jpg' %}" alt="Monolith">
+    <img src="{% static 'images/2001-a-space-odyssey-1968-Discovery.jpg' %}" alt="Discovery">
+    <img src="{% static 'images/2001-a-space-odyssey-1968-Dave.jpg' %}" alt="Dave">
+    <img src="{% static 'images/2001-a-space-odyssey-1968-Starchild.jpg' %}" alt="Starchild">
+</div>
+
+{% endblock %}
