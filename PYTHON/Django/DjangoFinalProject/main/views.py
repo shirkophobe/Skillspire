@@ -5,25 +5,33 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 def home(request):
     return render(request, 'base.html')
 
+# Register view
 def register(request):
     form = UserCreationForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
-        user = form.save()
-        login(request, user)
-        return redirect('news_feed')
+        form.save()
+        # Add a success message
+        messages.success(request, "Registration successful! Please log in.")
+        return redirect('home')  # Redirect to home after registration
     return render(request, 'register.html', {'form': form, 'title': 'Register', 'button_text': 'Register'})
 
+
+
+# Login view
 def user_login(request):
     form = AuthenticationForm(request, data=request.POST)
     if request.method == 'POST' and form.is_valid():
         user = form.get_user()
         login(request, user)
-        return redirect('news_feed')
+        return redirect('news_feed')  # Redirect to the news feed page after a successful login
+
     return render(request, 'login.html', {'form': form, 'title': 'Login', 'button_text': 'Login'})
+
 
 # News Feed (main page after login)
 @login_required

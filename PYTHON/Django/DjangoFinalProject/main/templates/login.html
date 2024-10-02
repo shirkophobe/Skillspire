@@ -8,19 +8,18 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="content-wrapper">
+    <!-- Background Image -->
+    <div class="background-image">
+        <!-- Form Container -->
         <div class="form-container">
             <h2>Login</h2>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
         </div>
     </div>
 </body>
 </html>
-
-
-
-

@@ -7,7 +7,7 @@ body {
 
 /* Background Image */
 .background-image {
-    background-image: url('{% static "images/2001-a-space-odyssey-1968-Jupiter-monolith.jpg" %}');
+    background-image: url("/static/images/2001-a-space-odyssey-1968-Jupiter-monolith.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -21,7 +21,7 @@ body {
 .content-wrapper {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
     border-radius: 10px;
     max-width: 1200px;
 }
@@ -58,4 +58,71 @@ body {
 .image-grid img {
     width: 100%;
     border-radius: 10px;
+}
+
+/* Login & Register Form Styling */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 95%;
+}
+
+.messages {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    max-width: 600px;
+    text-align: center;
+    background-color: #d4edda; /* Light green background */
+    border: 1px solid #c3e6cb; /* Border matching the background */
+    color: #155724; /* Dark green text */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for different types of alerts (if you want to use other colors for warnings, errors, etc.) */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
