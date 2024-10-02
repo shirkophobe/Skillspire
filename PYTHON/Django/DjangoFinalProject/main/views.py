@@ -6,29 +6,24 @@ from django.utils import timezone
 from .models import Post
 from django.contrib.auth.models import User
 
-# Registration view
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('news_feed')
-    else:
-        form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+def home(request):
+    return render(request, 'base.html')
 
-# Login view
+def register(request):
+    form = UserCreationForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        user = form.save()
+        login(request, user)
+        return redirect('news_feed')
+    return render(request, 'register.html', {'form': form, 'title': 'Register', 'button_text': 'Register'})
+
 def user_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('news_feed')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    form = AuthenticationForm(request, data=request.POST)
+    if request.method == 'POST' and form.is_valid():
+        user = form.get_user()
+        login(request, user)
+        return redirect('news_feed')
+    return render(request, 'login.html', {'form': form, 'title': 'Login', 'button_text': 'Login'})
 
 # News Feed (main page after login)
 @login_required

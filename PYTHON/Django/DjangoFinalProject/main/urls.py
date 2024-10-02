@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.news_feed, name='home'),  # Add this line for the root URL
+    # path('', views.news_feed, name='home'),  
+    path('', views.home, name='home'),
     path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
     path('news_feed/', views.news_feed, name='news_feed'),

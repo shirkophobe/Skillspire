@@ -5,5 +5,5 @@ from main import views
 urlpatterns = [
     path('', include('main.urls')),
     path('admin/', admin.site.urls),
-    path('login/', views.user_login, name='login'),  # Now it correctly references your app's views
+    path('login/', views.user_login, name='login'),  
 ]
